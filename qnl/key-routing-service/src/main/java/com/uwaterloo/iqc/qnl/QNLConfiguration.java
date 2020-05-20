@@ -39,7 +39,8 @@ public class QNLConfiguration {
             if (instanceId != null)
                 configLoc = System.getProperty("user.home") + "/.qkd" + instanceId + "/qnl/config.yaml";
             else
-                configLoc = System.getProperty("user.home") + "/.qkd/qnl/config.yaml";
+                configLoc = "D:\\Study\\Y2 Summer\\SpeQtral\\OpenQKD\\qnl\\conf\\config.yaml";
+                //configLoc = System.getProperty("user.home") + "/.qkd/qnl/config.yaml";
             ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
             config = mapper.readValue(new File(configLoc), QNLConfig.class);
             Gson gson = new Gson();

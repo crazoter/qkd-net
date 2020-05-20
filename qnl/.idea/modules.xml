@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/key-routing-service/key-routing-service.iml" filepath="$PROJECT_DIR$/key-routing-service/key-routing-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/qnl.iml" filepath="$PROJECT_DIR$/.idea/qnl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/qnl-utils/qnl-utils.iml" filepath="$PROJECT_DIR$/qnl-utils/qnl-utils.iml" />
+    </modules>
+  </component>
+</project>

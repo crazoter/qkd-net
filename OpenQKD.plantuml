@@ -1,0 +1,456 @@
+@startuml
+
+title __OPENQKD's Class Diagram__\n
+
+  namespace com.uwaterloo.iqc.authservice {
+    class com.uwaterloo.iqc.authservice.AuthServiceApplication {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    class com.uwaterloo.iqc.authservice.AuthServiceApplicationTests {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    class com.uwaterloo.iqc.authservice.AuthorizationServerConfiguration {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    class com.uwaterloo.iqc.authservice.DataCLR {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    class com.uwaterloo.iqc.authservice.PrincipalRestController {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace accounts {
+      class com.uwaterloo.iqc.authservice.accounts.Account {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace accounts {
+      class com.uwaterloo.iqc.authservice.accounts.AccountConfiguration {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace accounts {
+      interface com.uwaterloo.iqc.authservice.accounts.AccountRepository {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace clients {
+      class com.uwaterloo.iqc.authservice.clients.Client {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace clients {
+      class com.uwaterloo.iqc.authservice.clients.ClientConfiguration {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.authservice {
+    namespace clients {
+      interface com.uwaterloo.iqc.authservice.clients.ClientRepository {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.configservice {
+    class com.uwaterloo.iqc.configservice.ConfigServiceApplication {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.configservice {
+    class com.uwaterloo.iqc.configservice.ConfigServiceApplicationTests {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.apigateway {
+    class com.uwaterloo.iqc.kms.apigateway.KmsApiGatewayApplication {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.apigateway {
+    class com.uwaterloo.iqc.kms.apigateway.KmsApiGatewayApplicationTests {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.apigateway {
+    class com.uwaterloo.iqc.kms.apigateway.PrincipalRestController {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.ClientHandler {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.ClientInitializer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.Key {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.KeyPool {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.KeyPoolManager {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    interface com.uwaterloo.iqc.kms.component.KeyReader {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.KeyUtils {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.PolicyEngine {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.component {
+    class com.uwaterloo.iqc.kms.component.QNLKeyReader {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.controller {
+    class com.uwaterloo.iqc.kms.controller.KMSController {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.qnl {
+    class com.uwaterloo.iqc.kms.qnl.KMSQNLConfig {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.qnl {
+    class com.uwaterloo.iqc.kms.qnl.KeyReceivingServer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.qnl {
+    class com.uwaterloo.iqc.kms.qnl.ServerHandler {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kms.qnl {
+    class com.uwaterloo.iqc.kms.qnl.ServerInitializer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kmsservice {
+    class com.uwaterloo.iqc.kmsservice.KmsServiceApplication {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.kmsservice {
+    class com.uwaterloo.iqc.kmsservice.KmsServiceApplicationTests {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qllsim {
+    class com.uwaterloo.iqc.qllsim.KeyGenPeer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qllsim {
+    class com.uwaterloo.iqc.qllsim.KeyGenPeerActor {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qllsim {
+    class com.uwaterloo.iqc.qllsim.Messages {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyClientRouterInitializer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyRouter {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyRouterBackendHandler {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyRouterConnectHandler {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyRouterFrontendHandler {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.KeyServerRouterInitializer {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.OTPKey {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.QnlConfig {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.QNLConfiguration {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    class com.uwaterloo.iqc.qnl.RouteConfig {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPIncomingClientHandler {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessage {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessageDecoder {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessageEncoder {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPOutgoingClientHandler {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPOutgoingClientInitializer {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPRouter {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPServerRouterInitializer {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.Neighbour {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.Node {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace qll {
+      class com.uwaterloo.iqc.qnl.qll.QLLFileReader {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace qll {
+      interface com.uwaterloo.iqc.qnl.qll.QLLReader {
+      }
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.registrationservice {
+    class com.uwaterloo.iqc.registrationservice.RegistrationServiceApplication {
+    }
+  }
+  
+
+  namespace com.uwaterloo.iqc.registrationservice {
+    class com.uwaterloo.iqc.registrationservice.RegistrationServiceApplicationTests {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.QNLConstants {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.QNLRequest {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.QNLResponse {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.QNLUtils {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.RequestDecoder {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.RequestEncoder {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.ResponseDecoder {
+    }
+  }
+  
+
+  namespace com.uwaterloo.qkd.qnl.utils {
+    class com.uwaterloo.qkd.qnl.utils.ResponseEncoder {
+    }
+  }
+  
+
+  com.uwaterloo.iqc.authservice.DataCLR .up.|> CommandLineRunner
+  com.uwaterloo.iqc.authservice.clients.ClientConfiguration .up.|> ClientDetailsService
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter o-- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable : testRunnable
+  com.uwaterloo.iqc.qnl.qll.QLLFileReader .up.|> QLLReader
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

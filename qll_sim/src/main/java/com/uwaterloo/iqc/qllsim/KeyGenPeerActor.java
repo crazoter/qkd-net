@@ -11,7 +11,6 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import com.uwaterloo.iqc.qllsim.Messages.KeyGenReq;
 import com.uwaterloo.iqc.qllsim.Messages.KeyGenResp;
-
 import akka.actor.ActorSelection;
 import akka.actor.UntypedAbstractActor;
 

@@ -16,11 +16,12 @@ public class QNLConfig {
     private String kmsIP;
     private int kmsPort;
     public Map<String, String> OTPConfig;
-    public static final String OTP_KEYBLOCKSZ = "keyBlockSz";
+    public static final String OTP_KEYBLOCKSIZE = "keyBlockSz";
     public static final String KMS = "kms";
 
     public String getRouteConfigLoc() {
-        return System.getProperty("user.home") + "/" + base + "/" + routeConfigLoc;
+        return "D:\\Study\\Y2 Summer\\SpeQtral\\OpenQKD\\qnl\\conf\\routes.json";
+        //return System.getProperty("user.home") + "/" + base + "/" + routeConfigLoc;
     }
 
     public String getQNLSiteKeyLoc(String siteId) {
@@ -75,7 +76,7 @@ public class QNLConfig {
     }
 
     public int getOTPKeyBlockSz() {
-        return Integer.valueOf(OTPConfig.get(OTP_KEYBLOCKSZ)).intValue();
+        return Integer.valueOf(OTPConfig.get(OTP_KEYBLOCKSIZE)).intValue();
     }
 
 }

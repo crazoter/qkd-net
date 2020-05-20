@@ -33,6 +33,7 @@ public class KeyRouterConnectHandler extends ChannelInboundHandlerAdapter {
         LOGGER.info("KeyRouterConnectHandler.new:" + this + "," + remoteHost + ":" + remotePort);
     }
 
+    //Called when the connection is initialized
     @Override
     public void channelActive(ChannelHandlerContext ctx) {
         inboundChannel = ctx.channel();

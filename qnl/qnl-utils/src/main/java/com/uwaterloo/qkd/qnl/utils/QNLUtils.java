@@ -9,7 +9,7 @@ import java.util.Vector;
 
 public class QNLUtils {
 
-    public static int readKeys(byte[] dst, String file, int keyBlockSz) {
+    public static int readKeys(byte[] dst, String file, int keyBlockSize) {
         String line;
         int linesRead = 0;
         int destPos = 0;
@@ -28,7 +28,7 @@ public class QNLUtils {
         return linesRead;
     }
 
-    public static int readKeys(Vector<String> v, String file, int keyBlockSz) {
+    public static int readKeys(Vector<String> v, String file, int keyBlockSize) {
         String line;
         int linesRead = 0;
         try {
@@ -45,11 +45,11 @@ public class QNLUtils {
         return linesRead;
     }
 
-    public static void writeKeys(byte[] src, String file, int keyBlockSz) {
+    public static void writeKeys(byte[] src, String file, int keyBlockSize) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
-            int hexBytes = src.length / keyBlockSz;
-            for(int k = 0; k < keyBlockSz; ++k) {
+            int hexBytes = src.length / keyBlockSize;
+            for(int k = 0; k < keyBlockSize; ++k) {
                 bw.write(new String(src, k*hexBytes, hexBytes));
                 bw.newLine();
             }
@@ -57,7 +57,7 @@ public class QNLUtils {
         } catch(IOException ioe) {}
     }
     
-    public static void writeKeys(Vector<String> src, String file, int keyBlockSz) {
+    public static void writeKeys(Vector<String> src, String file, int keyBlockSize) {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(file));
             for(String key : src) {

@@ -2,11 +2,11 @@ package com.uwaterloo.qkd.qnl.utils;
 
 public class QNLConstants {
 
-    //KMS-QNL OP
+    //KMS-QNL OP CODES
     public static final short REQ_GET_ALLOC_KP_BLOCK = 1;
     public static final short REQ_POST_ALLOC_KP_BLOCK = 2;
 
-    //QNL-QNL OP
+    //QNL-QNL OP CODES
     public static final short REQ_POST_OTP_BLOCK_INDEX = 3;
     public static final short REQ_GET_KP_BLOCK_INDEX = 4;
     public static final short REQ_POST_KP_BLOCK_INDEX = 5;
@@ -23,6 +23,6 @@ public class QNLConstants {
 
 
 
-    public static final int KP_BLOCK_BYTES_SZ = 32768;
+    public static final int KP_BLOCK_BYTES_SIZE = 32768;
 
 }

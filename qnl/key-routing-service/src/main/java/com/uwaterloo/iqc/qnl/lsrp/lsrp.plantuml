@@ -1,0 +1,192 @@
+@startuml
+
+title __LSRP's Class Diagram__\n
+
+  namespace com.uwaterloo.iqc.qnl {
+    namespace lsrp {
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPIncomingClientHandler {
+          {static} - LOGGER : Logger
+          - remoteAddr : String
+          - remotePort : int
+          - router : LSRPRouter
+          + LSRPIncomingClientHandler()
+          + channelActive()
+          + channelInactive()
+          + channelRead()
+          + exceptionCaught()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessage {
+          {static} - LOGGER : Logger
+          - address : String
+          - neighbours : List<Neighbour>
+          - originator : String
+          - request : boolean
+          - timeStamp : long
+          - type : String
+          + LSRPMessage()
+          + LSRPMessage()
+          + addNeighbour()
+          + getAddress()
+          + getNeighbours()
+          + getOriginator()
+          + getTimeStamp()
+          + setPayload()
+          + toString()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessageDecoder {
+          {static} - LOGGER : Logger
+          - charset : Charset
+          # decode()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPMessageEncoder {
+          - charset : Charset
+          # encode()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPOutgoingClientHandler {
+          {static} - LOGGER : Logger
+          - remoteAddr : String
+          - remotePort : int
+          - router : LSRPRouter
+          + LSRPOutgoingClientHandler()
+          + channelActive()
+          + channelInactive()
+          + channelRead()
+          + exceptionCaught()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPOutgoingClientInitializer {
+          {static} - LOGGER : Logger
+          - router : LSRPRouter
+          + LSRPOutgoingClientInitializer()
+          + initChannel()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPRouter {
+          {static} - LINK_DETECTION_TIMER_VALUE : int
+          {static} - LOGGER : Logger
+          - adjacentNeighbours : Map<String, Node>
+          - allNodes : Map<String, Node>
+          - floodingTimeStamp : long
+          - myIPv4Address : String
+          - mySiteId : String
+          - qConfig : QNLConfiguration
+          - sharedEventLoopGroup : EventLoopGroup
+          + LSRPRouter()
+          + checkLink()
+          + connectAdjacentNeighbours()
+          + connectNeighbourInEventLoop()
+          {static} + getLocalIPv4Address()
+          + getNextHop()
+          + onAdjacentNeighbourConnected()
+          + onAdjacentNeighbourDisconnected()
+          + onLSRP()
+          + printShortestPath()
+          + start()
+          + testShortestPath()
+          {static} ~ calculateShortestPathFromSource()
+          {static} - calculateMinimumDistance()
+          - connectNeighbour()
+          {static} - getLowestDistanceNode()
+          - resetShortestPath()
+          - resetShortestPath()
+          - startFlooding()
+          - startListening()
+          - writeNetworkToFile()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.ConnectRunnable {
+          - neighbour : Node
+          + ConnectRunnable()
+          + run()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable {
+          - source : Node
+          + DijkstraRunnable()
+          + run()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.LinkDetectionRunnable {
+          - neighbour : String
+          + LinkDetectionRunnable()
+          + run()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.LSRPServerRouterInitializer {
+          {static} - LOGGER : Logger
+          - router : LSRPRouter
+          + LSRPServerRouterInitializer()
+          + initChannel()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.Neighbour {
+          + addr : String
+          + name : String
+          + port : long
+          + weight : int
+          + Neighbour()
+      }
+
+      class com.uwaterloo.iqc.qnl.lsrp.Node {
+          ~ adjacentNodes : Map<Node, Integer>
+          ~ floodingTimeStamp : long
+          {static} - LOGGER : Logger
+          - address : String
+          - adjacent : boolean
+          - channel : Channel
+          - connected : boolean
+          - distance : Integer
+          - name : String
+          - port : int
+          - shortestPath : List<Node>
+          + Node()
+          + addDestination()
+          + getAddress()
+          + getAdjacentNodes()
+          + getDistance()
+          + getFloodingTimeStamp()
+          + getName()
+          + getPort()
+          + getShortestPath()
+          + isAdjacent()
+          + isConnected()
+          + neighbours()
+          + removeDestination()
+          + resetAdjacentNodes()
+          + resetShortestPath()
+          + sendLSRP()
+          + setAdjacent()
+          + setChannel()
+          + setConnected()
+          + setDistance()
+          + setFloodingTimeStamp()
+          + setShortestPath()
+          + toString()
+      }
+    }
+  }
+  
+
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter o-- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable : testRunnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter +-down- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.ConnectRunnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter +-down- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter +-down- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.LinkDetectionRunnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.ConnectRunnable .up.|> Runnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable .up.|> Runnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.DijkstraRunnable o-- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter : router
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.LinkDetectionRunnable .up.|> Runnable
+  com.uwaterloo.iqc.qnl.lsrp.LSRPRouter.LinkDetectionRunnable o-- com.uwaterloo.iqc.qnl.lsrp.LSRPRouter : router
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
